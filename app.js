@@ -104,7 +104,15 @@ const CourseInfo = {
     //==== PUT CODE HERE =====//
     return results;
   }
-  
+      // the ID of the learner for which this data has been collected
+      const idLearnerSubmissions = LearnerSubmissions.map((learner_id) => {
+        console.log(' Learner ID:',learner_id)
+        return learner_id.learner_id
+      })
+      console.log('The ID of the learner for which this data has been collected:', idLearnerSubmissions)
+
+    // the learner’s total, weighted average, in which assignments
+//   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
   
   console.log(result);
