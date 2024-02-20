@@ -1,4 +1,4 @@
-//  The provided course information.
+// The provided course information.
 const CourseInfo = {
     id: 451,
     name: "Introduction to JavaScript",
@@ -79,32 +79,37 @@ const CourseInfo = {
   function getLearnerData(course, ag, submissions) {
     const results = [];
   
-    // const example_result = [
-    //   {
-    //     id: 125,
-    //     avg: 0.985, // (47 + 150) / (50 + 150)
-    //     1: 0.94, // 47 / 50
-    //     2: 1.0, // 150 / 150
-    //   },
-    //   {
-    //     id: 132,
-    //     avg: 0.82, // (39 + 125) / (50 + 150)
-    //     1: 0.78, // 39 / 50
-    //     2: 0.833, // late: (140 - 15) / 150
-    //   },
-    // ];
+    const example_result = [
+      {
+        id: 125,
+        avg: 0.985, // (47 + 150) / (50 + 150)
+        1: 0.94, // 47 / 50
+        2: 1.0, // 150 / 150
+      },
+      {
+        id: 132,
+        avg: 0.82, // (39 + 125) / (50 + 150)
+        1: 0.78, // 39 / 50
+        2: 0.833, // late: (140 - 15) / 150
+      },
+    ];
   
     // Parse submission data.
-    
     console.log(`Submission Data:`, submissions );
+    return results;
+  }
     // Check to see if the submission was late; if so, deduct 10% of the maximum possible points.
     // Find existing data for this learner, if any.
     // If the learner already has data, add the new score to the existing data.
     // Calculate the average score for each learner and remove the extra data.
-  
+  // -------------------------------------------------------------------------------------------------------
+  // =======================================================================================================
     //==== PUT CODE HERE =====//
-    return results;
-  }
+  
+    let learnerScore = []; //learner scores 
+      learnerScore.push(1); 
+
+
       // the ID of the learner for which this data has been collected
       const idLearnerSubmissions = LearnerSubmissions.map((learner_id) => {
         console.log(' Learner ID:',learner_id)
@@ -112,37 +117,8 @@ const CourseInfo = {
       })
       console.log('The ID of the learner for which this data has been collected:', idLearnerSubmissions)
 
-      // the Learner submissions array
-      const learnerScoresForSubmissions = LearnerSubmissions.map((score) => {
-        console.log('The following is the Learner Scores:', score)
-      })
-
-      
-
-
-
     // the learner’s total, weighted average, in which assignments
-    const learnersAverage = function (LearnerSubmissions, numberOfGrades){
-      let totalScore =0; 
-      for(let submission of LearnerSubmissions){
-        totalScore += submission.score;
-      }
-      return totalScore / numberOfGrades;
-    }
-    // console.log('Average score:',function(learnersAverage))
-    // const averageLearnersSubmissions = LearnerSubmissions.map((avg) => {
-    //     console.log(' Learner Average:',avg)
-    //     return learner_id.avg
-    //   })
-
-      // const assignmentLearnerAverage = []; {
-      //   return score
-      // }
-      // console.log('The learner average is:',assignmentLearnerAverage)
-
-    //   const averageLearnersSubmissions = LearnerSubmissions.map(avg) => {
-    //     console.log('Learner Average:',avg)
-    //   }
+//   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
   
   console.log(result);
